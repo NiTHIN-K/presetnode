@@ -20,9 +20,7 @@ app.post('/get-guest-token', async (req, res) => {
             secret: "415e4d4cc032c22f9ca342d16bf218405b0a4964a5b6ea411cbe465b56772918"
         }, {
             headers: {
-                'Cookie': '__scid__=b27c0d17-d028-4e05-bf76-3a288ed169ce',
                 'Content-Type': 'application/json',
-                'User-Agent': 'insomnia/8.4.2'
             }
         });
 
@@ -39,7 +37,16 @@ app.post('/get-guest-token', async (req, res) => {
                 {
                     type: "dashboard",
                     id: "695106ec-5e10-43ca-b7a9-942d763d4c11"
+                },
+                {
+                    type: "dashboard",
+                    id: "d312d69c-c6cd-4af7-a527-8c2bf99c0292"
+                },
+                {
+                    type: "dashboard",
+                    id: "03a39a8e-5787-45bb-b0d0-ca534eb7902e"
                 }
+                // Add more dashboard IDs here as needed
             ],
             rls: []
         }, {
