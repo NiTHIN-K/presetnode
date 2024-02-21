@@ -74,7 +74,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
     // req.file is the 'file' file
     // req.body will hold the text fields, if there were any
 
-    console.log(req.file); // You can use this to see file information
+    console.log(req); // You can use this to see file information
 
     res.json({ message: 'File uploaded successfully' });
 });
