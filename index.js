@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const multer = require('multer');
+
 
 const app = express();
 
@@ -61,6 +63,20 @@ app.post('/get-guest-token', async (req, res) => {
         console.error('Error making API requests:', error);
         res.status(500).json({ error: 'Failed to retrieve guest token' });
     }
+});
+
+
+
+// Set up multer for file handling
+const upload = multer({ dest: 'uploads/' }); // This will save files to an 'uploads' directory. Adjust as needed.
+
+app.post('/upload', upload.single('file'), (req, res) => {
+    // req.file is the 'file' file
+    // req.body will hold the text fields, if there were any
+
+    console.log(req.file); // You can use this to see file information
+
+    res.json({ message: 'File uploaded successfully' });
 });
 
 const PORT = process.env.PORT || 3001;
